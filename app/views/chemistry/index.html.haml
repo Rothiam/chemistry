@@ -1,0 +1,12 @@
+%h1 Covalent Bond Enthalpy Calculator
+%p Definition of enthalpy
+%a{href: "https://www.khanacademy.org/science/chemistry/thermodynamics-chemistry/enthalpy-chemistry-sal/v/enthalpy"} Enthalpy - Khan Academy
+%p Calculate enthalpy:
+= form_tag("/calculate_enthalpy", method: "post", id: "enthalpy_form") do
+  = render partial: "molecule_fields", locals: {molecule_number: 1, type: "reactant"}
+  = button_tag "+", class: "add_reactant_molecule add_molecule"
+  %span ----->
+  = render partial: "molecule_fields", locals: {molecule_number: 1, type: "product"}
+  = button_tag "+", class: "add_product_molecule add_molecule"
+  %span
+  = submit_tag "Calculate", id: "#enthalpy_form_submit"
