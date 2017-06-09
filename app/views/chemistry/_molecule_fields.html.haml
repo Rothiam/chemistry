@@ -1,4 +1,4 @@
 %span.molecule_fields{class: "#{type}_molecule_fields"}
-  =select_tag "#{type}[molecule_#{molecule_number}][atom_1]", options_for_select(@elements), class: "select_atom"
-  =select_tag "#{type}[molecule_#{molecule_number}][bonds]", options_for_select([])
-  =select_tag "#{type}[molecule_#{molecule_number}][atom_2]", options_for_select([]), class: "second_select_atom"
+    =select_tag "#{type}[molecule_#{molecule_number}][atom_1]", options_for_select(@elements), class: "select_atom"
+    =select_tag "#{type}[molecule_#{molecule_number}][bonds]", options_for_select([])
+    =select_tag "#{type}[molecule_#{molecule_number}][atom_2]", options_for_select([]), class: "second_select_atom"

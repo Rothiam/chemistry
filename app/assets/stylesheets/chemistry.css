@@ -1,3 +1,20 @@
-#enthalpy_form input {
-  /*width: 35px;*/
+body {
+  text-align: center;
+  font-family: "Open-Sans";
+  font-size: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 80px;
+}
+
+.title {
+  color: green;
+}
+
+.to-do {
+  margin-top: 200px;
+}
+
+#enthalpy-form{
+  font-size: 25px;
 }
