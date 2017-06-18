@@ -34,6 +34,7 @@ class ChemistryController < ApplicationController
     @reactant_energy = energies[:reactant]
     @product_energy = energies[:product]
     @enthalpy = energies[:product] - energies[:reactant]
+    render json: {enthalpy: @enthalpy, reactant_energy: @reactant_energy, product_energy: @product_energy} 
   end
 
 

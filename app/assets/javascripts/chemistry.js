@@ -27,6 +27,14 @@ $(document).on("turbolinks:load", function() {
       }
     });
   });
+  $(document).on("ajax:success", function(event) {
+    var reactant_energy = event.detail[0].reactant_energy
+    var enthalpy = event.detail[0].enthalpy
+    var product_energy = event.detail[0].product_energy
+    $("#reactant_energy").text("Reactant energy: " + reactant_energy);
+    $("#results").text("Change in enthalpy: " + enthalpy);
+    $("#product_energy").text("Product energy: " + product_energy);
+  });
   setListeners();
 });
 

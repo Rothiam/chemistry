@@ -3,7 +3,7 @@
 %p First, select an element. Then, select the other element. Lastly, choose the number of bonds between the two atoms. Press the + to add another molecule. When you are done, press calculate.
 %div{id: "enthalpy-form"}
   %h3 Calculate enthalpy:
-  = form_tag("/calculate_enthalpy", method: "post", id: "enthalpy_form") do
+  = form_tag("/calculate_enthalpy", method: "post", id: "enthalpy_form", remote: true) do
     = render partial: "molecule_fields", locals: {molecule_number: 1, type: "reactant"}
     = button_tag "+", class: "add_reactant_molecule add_molecule"
     %span ----->
@@ -11,5 +11,7 @@
     = button_tag "+", class: "add_product_molecule add_molecule"
     %span
     = submit_tag "Calculate", id: "#enthalpy_form_submit"
-
-%h4{class: "to-do"} To do: Add coefficients, style page, have results display on same page
+%h3#reactant_energy
+%h3#results
+%h3#product_energy
+%h4{class: "to-do"} To do: Add coefficients, style page, have results display on same page, require balanced equation
