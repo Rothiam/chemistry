@@ -35,6 +35,14 @@ $(document).on("turbolinks:load", function() {
     $("#results").text("Change in enthalpy: " + enthalpy);
     $("#product_energy").text("Product energy: " + product_energy);
   });
+  $(document).on("ajax:before", function() {
+    var reactants = $('select[id^="reactant"][class*="select_atom"]').map(function(i, element) { return $(element).val() }).get().sort().join();
+    var products = $('select[id^="product"][class*="select_atom"]').map(function(i, element) { return $(element).val() }).get().sort().join()
+    if(reactants != products) {
+      return false;
+    }
+  });
+
   setListeners();
 });
 
